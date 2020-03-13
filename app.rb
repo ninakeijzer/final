@@ -33,7 +33,7 @@ end
 get "/events/:id" do
     @event = events_table.where(id: params[:id]).to_a[0]
     @rsvps = rsvps_table.where(event_id: @event[:id])
-    @going_count = rsvps_table.where(event_id: @event[:id]).sum(:going)
+    @going_count = rsvps_table.where(event_id: @event[:id]), going: true).count 
     @users_table = users_table
     view "event"
 end
