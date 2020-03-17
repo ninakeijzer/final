@@ -6,7 +6,8 @@ require "sequel"                                                                
 require "logger"                                                                      #
 require "bcrypt"                                                                      #
 require "twilio-ruby" 
-require "geocoder"                                                                #
+require "geocoder" 
+require "date"                                                               #
 connection_string = ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/development.sqlite3"  #
 DB ||= Sequel.connect(connection_string)                                              #
 DB.loggers << Logger.new($stdout) unless DB.loggers.size > 0                          #
