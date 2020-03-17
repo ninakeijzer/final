@@ -37,15 +37,6 @@ get "/events/:id" do
     @users_table = users_table
     view "event"
 end
-
-# get "/" do
-#   # lat: ± 90.0
-#   # long: ± 180.0
-#   @lat = rand(-90.0..90.0)
-#   @long = rand(-180.0..180.0)
-#   @lat_long = "#{@lat},#{@long}"
-#   view "where2"
-# end
     
 get "/events/:id/rsvps/new" do
     @event = events_table.where(id: params[:id]).to_a[0]
