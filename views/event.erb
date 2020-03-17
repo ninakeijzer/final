@@ -27,6 +27,13 @@
             <% end %>
         </p>
         <p class="mt-5">
+            <% if @current_user %>
+                <a href="/events/<%= @event[:id] %>/rsvps/new" class="btn btn-primary">Place review</a>
+            <% else %>
+                <a href="/logins/new" class="btn btn-danger">Sign in to add review</a>
+            <% end %>
+        </p>
+        <p class="mt-5">
            <% @results = Geocoder.search(@event[:location]) %> 
             <% @lat_long = @results.first.coordinates %> 
             <% puts @lat_long %>

@@ -26,6 +26,13 @@ DB.create_table! :users do
   String :email
   String :password
 end
+DB.create_table! :reviews do
+  primary_key :id
+  foreign_key :event_id
+  foreign_key :user_id
+  Fixnum :rate
+  String :comments, text: true
+end
 
 # Insert initial (seed) data
 events_table = DB.from(:events)
