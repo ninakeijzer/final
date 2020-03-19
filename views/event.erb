@@ -19,26 +19,7 @@
                 </div>
             </div>
             <% end %> 
-        </div>
-
-    <div class="col-sm-4">
-        <% for review in @reviews %> 
-            <div class="card-mt-5">
-                <div class="card-header">
-                    <h10> <%= review[:rate]%></h10> <h11>/10</h11> <h5> Title </h5>
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                    <p><%= review[:comments] %></p>
-                    <footer class="blockquote-footer">Written by <cite title="Source Title"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-        <% end %>
-    </div>
-
-
-
+    
       <div class="col-sm-5">
         <p class="mt-5">
            <% @results = Geocoder.search(@event[:location]) %> 
@@ -71,6 +52,21 @@
         <h3>Net promoter score</h3>
         <p><%= @going_count %></p>
     </div>
+</div>
     
-
+ <div class="col-sm-4">
+        <% for review in @reviews %> 
+            <div class="card-mt-5">
+                <div class="card-header">
+                    <h10> <%= review[:rate]%></h10> <h11>/10</h11> <h5> Title </h5>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    <p><%= review[:comments] %></p>
+                    <footer class="blockquote-footer">Written by <cite title="Source Title"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        <% end %>
+    </div>
  
