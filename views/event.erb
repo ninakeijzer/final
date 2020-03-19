@@ -22,7 +22,43 @@
 
 
 
-<% for review in @reviews %> 
+
+
+
+      
+        <p class="mt-5">
+           <% @results = Geocoder.search(@event[:location]) %> 
+            <% @lat_long = @results.first.coordinates %> 
+            <% puts @lat_long %>
+            <% @lat = @lat_long[0] %>
+            <% @long = @lat_long[1] %>
+                <iframe
+                    width="400"
+                    height="300"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat %>,<%=@long%>&zoom=14" allowfullscreen>
+                </iframe>
+        </p>   
+
+          <p class="mt-5">
+            <% if @current_user %>
+                <a href="/events/<%= @event[:id] %>/review/new" class="btn btn-primary">Place review</a>
+            <% else %>
+                <a href="/logins/new" class="btn btn-danger">Sign in to add review</a>
+            <% end %>
+        </p>     
+    </div>
+
+    <div class="col-sm-3">
+        <h3>When?</h3>
+        <p><%= @event[:date] %></p>
+        <h3>Where?</h3>
+        <p><%= @event[:location] %></p>
+        <h3>How many guests so far?</h3>
+        <p><%= @going_count %></p>
+    </div>
+
+    <% for review in @reviews %> 
 <div class="card">
   <div class="card-header">
           <div class="col-sm-2">
@@ -37,38 +73,6 @@
   </div>
 </div>
 <% end %>
-
-
-        <p class="mt-5">
-            <% if @current_user %>
-                <a href="/events/<%= @event[:id] %>/review/new" class="btn btn-primary">Place review</a>
-            <% else %>
-                <a href="/logins/new" class="btn btn-danger">Sign in to add review</a>
-            <% end %>
-        </p>
-        <p class="mt-5">
-           <% @results = Geocoder.search(@event[:location]) %> 
-            <% @lat_long = @results.first.coordinates %> 
-            <% puts @lat_long %>
-            <% @lat = @lat_long[0] %>
-            <% @long = @lat_long[1] %>
-                <iframe
-                    width="400"
-                    height="300"
-                    frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat %>,<%=@long%>&zoom=14" allowfullscreen>
-                </iframe>
-        </p>        
-    </div>
-    
-    <div class="col-sm-3">
-        <h3>When?</h3>
-        <p><%= @event[:date] %></p>
-        <h3>Where?</h3>
-        <p><%= @event[:location] %></p>
-        <h3>How many guests so far?</h3>
-        <p><%= @going_count %></p>
-    </div>
 </div>
 
 <div class="row">
