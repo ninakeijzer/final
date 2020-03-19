@@ -20,7 +20,6 @@
             </div>
             <% end %> 
     
-      <div class="col-sm-5">
         <p class="mt-5">
            <% @results = Geocoder.search(@event[:location]) %> 
             <% @lat_long = @results.first.coordinates %> 
@@ -35,6 +34,13 @@
                 </iframe>
         </p>   
 
+        <h3>Location</h3>
+            <p><%= @event[:location] %></p>
+            <h3>Net promoter score</h3>
+            <p><%= @going_count %></p>
+            <h3>Net promoter score</h3>
+            <p><%= @going_count %></p>
+
           <p class="mt-5">
             <% if @current_user %>
                 <a href="/events/<%= @event[:id] %>/review/new" class="btn btn-primary">Place review</a>
@@ -43,16 +49,6 @@
             <% end %>
         </p>     
     </div>
-
-    <div class="col-sm-3">
-        <h3>Location</h3>
-        <p><%= @event[:location] %></p>
-        <h3>Net promoter score</h3>
-        <p><%= @going_count %></p>
-        <h3>Net promoter score</h3>
-        <p><%= @going_count %></p>
-    </div>
-</div>
     
  <div class="col-sm-4">
         <% for review in @reviews %> 
