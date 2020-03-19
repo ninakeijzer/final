@@ -19,7 +19,9 @@
                 </div>
             </div>
             <% end %> 
+        </div>
       
+      <div class="col-sm-5">
         <p class="mt-5">
            <% @results = Geocoder.search(@event[:location]) %> 
             <% @lat_long = @results.first.coordinates %> 
