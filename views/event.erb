@@ -36,16 +36,13 @@
 <div class="card">
   <div class="card-header">
           <div class="col-sm-2">
-            <h10> <%= review[:rate]%> </h10> <h11>/10 </h11>
-          </div>
-          <div class="col-sm-10">
-                    <h5 class="mt-0"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></h5>
+            <h10> <%= review[:rate]%> </h10> <h11>/10 </h11> <p> Title </p>
           </div> 
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      <footer class="blockquote-footer">Written by <cite title="Source Title"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></cite></footer>
     </blockquote>
   </div>
 </div>
