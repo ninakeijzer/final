@@ -33,7 +33,8 @@
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat %>,<%=@long%>&zoom=14" allowfullscreen>
                 </iframe>
         </p>   
-
+</div>
+<div class="col-sm-2">
         <h3>Location</h3>
             <p><%= @event[:location] %></p>
             <h3>Net promoter score</h3>
@@ -50,7 +51,7 @@
         </p>     
     </div>
     
- <div class="col-sm-4">
+ <div class="col-sm-2">
         <% for review in @reviews %> 
             <div class="card-mt-5">
                 <div class="card-header">
