@@ -4,7 +4,7 @@
 </h2>
 <h1>Review for <%= @event[:title] %></h1>
 
-<form action="/events/<%= @event[:id] %>/rsvps/create">
+<form action="/events/<%= @event[:id] %>/reviews/create">
   <div class="form-group">
     <label>Would you recommend this to your friends? (0= not at all likely, 10= extremely likely)</label>
     <select class="form-control" name="rate">
