@@ -73,7 +73,8 @@ get "/events/:id/reviews/create" do
     reviews_table.insert(event_id: params["id"],
                        user_id: session["user_id"],
                        rate: params["rate"],
-                       comments: params["comments"])
+                       comment: params["comment"]),
+                       description: params["description"])
     view "create_review"
 end
 ########################################################################
