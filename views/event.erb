@@ -21,18 +21,9 @@
             <% end %>
 
 <!-- ADDED BY NINA LETS SEE IF IT WORKS -->
-             <% for rsvp in @rsvps %>
-            <div class="media">
-                <% if rsvp[:going] %>
-                    <i class="fas fa-thumbs-up fa-3x mr-3"></i>
-                <% else %>
-                    <i class="fas fa-thumbs-down fa-3x mr-3"></i>
-                <% end %>
-                <div class="media-body">
-                    <h5 class="mt-0"><%= @users_table.where(id: rsvp[:user_id]).to_a[0][:name] %></h5>
-                    <%= rsvp[:comments] %> 
-                </div>
-            </div>
+             <% for review in @reviews %>
+                    <h5 class="mt-0"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></h5>
+                    <%= review[:comments] %> 
             <% end %>
 <!-- ######################## ADDED BY NINA -->
             
