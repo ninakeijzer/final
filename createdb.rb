@@ -5,7 +5,6 @@ DB ||= Sequel.connect(connection_string)                                        
 #######################################################################################
 
 
-# New domain model - adds users
 DB.create_table! :events do
   primary_key :id
   String :title

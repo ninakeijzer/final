@@ -23,7 +23,7 @@ events_table = DB.from(:events)
 rsvps_table = DB.from(:rsvps)
 users_table = DB.from(:users)
 # ADDED BY NINA _ TBD IF IT works#################
-rsvps_table = DB.from(:reviews)
+reviews_table = DB.from(:reviews)
 ##################################################
 
 before do
