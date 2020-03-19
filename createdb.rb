@@ -30,7 +30,8 @@ DB.create_table! :reviews do
   foreign_key :event_id
   foreign_key :user_id
   Fixnum :rate
-  String :comments, text: true
+  String :comment, text: true
+  String :description, text: true
 end
 
 # Insert initial (seed) data
