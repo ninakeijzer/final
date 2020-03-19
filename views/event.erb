@@ -19,12 +19,6 @@
                 </div>
             </div>
             <% end %> 
-
-
-
-
-
-
       
         <p class="mt-5">
            <% @results = Geocoder.search(@event[:location]) %> 
@@ -59,7 +53,7 @@
     
 
     <% for review in @reviews %> 
-<div class="card">
+<div class="card-mt-5">
   <div class="card-header">
             <h10> <%= review[:rate]%></h10> <h11>/10</h11> <h5> Title </h5>
   </div>
@@ -73,22 +67,4 @@
 <% end %>
 </div>
 
-<div class="row">
-        <% for review in @reviews %>
-            <div class="col-sm-2">
-                <h10> <%= review[:rate]%> </h10> <h11>/10 </h11>
-            </div>
-            <div class="col-sm-10">
-                    <h5 class="mt-0"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></h5>
-                    <%= review[:comments] %> 
-            </div>
-        <% end %>
-</div>
-
-        <p class="mt-5">
-            <% if @current_user %>
-                <a href="/events/<%= @event[:id] %>/rsvps/new" class="btn btn-primary">RSVP now!</a>
-            <% else %>
-                <a href="/logins/new" class="btn btn-danger">Please sign in to RSVP</a>
-            <% end %>
-        </p>
+ 
