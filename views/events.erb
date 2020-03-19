@@ -3,3 +3,11 @@
 <% for event in @events %>
     <p><a href="/events/<%= event[:id] %>"><%= event[:title] %></a></p>
 <% end %>
+
+<p class="mt-5">
+            <% if @current_user %>
+                <a href="/logins/new" class="btn btn-primary">Add event</a>
+            <% else %>
+                <a href="/logins/new" class="btn btn-danger">Sign in to add events</a>
+            <% end %>
+ </p> 
