@@ -36,7 +36,7 @@
 
              <% for review in @reviews %>
             <div class="media">
-                <%= review[:rate] %> <h11>/10</h11>
+                <h10> <%= review[:rate] %> </h10> <h11>/10</h11>
              <div class="media-body">
                     <h5 class="mt-0"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></h5>
                     <%= review[:comments] %> 
