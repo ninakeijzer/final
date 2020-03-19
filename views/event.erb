@@ -22,9 +22,25 @@
         <% for review in @reviews %>
             <div class="media">
                 <% if review[:rate] == 10 %>
-                <h10>10</h10><p>/10</p>
+                    <h10>10</h10><p>/10</p>
+                <% if review[:rate] == 9 %>
+                    <h10>9</h10><p>/10</p>
+                <% if review[:rate] == 8 %>
+                    <h10>8</h10><p>/10</p>
+                <% if review[:rate] == 7 %>
+                    <h10>7</h10><p>/10</p>
+                <% if review[:rate] == 6 %>
+                    <h10>6</h10><p>/10</p>
+                <% if review[:rate] == 5 %>
+                    <h10>5</h10><p>/10</p>
+                <% if review[:rate] == 4 %>
+                    <h10>4</h10><p>/10</p>
+                <% if review[:rate] == 3 %>
+                    <h10>3</h10><p>/10</p>
+                <% if review[:rate] == 2 %>
+                    <h10>2</h10><p>/10</p>
                 <% else %>
-                    <i class="fas fa-thumbs-down fa-3x mr-3"></i>
+                    <h10>1</h10><p>/10</p>
                 <% end %>
              <div class="media-body">
                     <h5 class="mt-0"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></h5>
