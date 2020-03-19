@@ -75,7 +75,7 @@ get "/events/:id/reviews/create" do
     view "create_review"
 end
 
-get "/users/new" do
+get "/users/new" do 
     view "new_user"
 end
 
