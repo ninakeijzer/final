@@ -19,6 +19,15 @@
                 </div>
             </div>
             <% end %>
+        <% for review in @reviews %>
+            <div class="media">
+                <% if review[:rate] == "10" %>
+                <i class="fas fa-thumbs-up fa-3x mr-3"></i>
+                <% else %>
+                    <i class="fas fa-thumbs-down fa-3x mr-3"></i>
+                <% end %>
+            </div>
+            <% end %>
             
         <p class="mt-5">
             <% if @current_user %>
