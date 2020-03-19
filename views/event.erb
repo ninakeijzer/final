@@ -20,7 +20,7 @@
             </div>
             <% end %> 
 
-    <div class="col-sm-8">
+    <div class="col-sm-6">
         <p class="mt-5">
            <% @results = Geocoder.search(@event[:location]) %> 
             <% @lat_long = @results.first.coordinates %> 
@@ -36,7 +36,7 @@
         </p>   
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-2">
         <h3>Location</h3>
             <p><%= @event[:location] %></p>
             <h3>Net promoter score</h3>
