@@ -71,7 +71,6 @@ get "/events/:id/reviews/create" do
                        user_id: session["user_id"],
                        rate: params["rate"],
                        comment: params["comment"],
-                       current_time: params["current_time"],
                        description: params["description"])
     view "create_review"
 end
