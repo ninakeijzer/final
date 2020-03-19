@@ -23,13 +23,25 @@
 <div class="row">
         <% for review in @reviews %>
             <div class="col-sm-2">
-                <h10> <%= review[:rate] %> </h10> <h11>/10 </h11>
+                <h10> <%= review[:rate]%> </h10> <h11>/10 </h11>
             </div>
             <div class="col-sm-10">
                     <h5 class="mt-0"><%= @users_table.where(id: review[:user_id]).to_a[0][:name] %></h5>
                     <%= review[:comments] %> 
             </div>
         <% end %>
+</div>
+
+<div class="card">
+  <div class="card-header">
+  Quote
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+  </div>
 </div>
 
         <p class="mt-5">
