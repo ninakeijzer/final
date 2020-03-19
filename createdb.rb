@@ -29,6 +29,7 @@ DB.create_table! :reviews do
   primary_key :id
   foreign_key :event_id
   foreign_key :user_id
+  Date :current_time
   Fixnum :rate
   String :comment, text: true
   String :description, text: true

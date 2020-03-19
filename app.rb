@@ -22,9 +22,7 @@ after { puts; }                                                                 
 events_table = DB.from(:events)
 rsvps_table = DB.from(:rsvps)
 users_table = DB.from(:users)
-# ADDED BY NINA _ TBD IF IT works#################
 reviews_table = DB.from(:reviews)
-##################################################
 
 before do
     @current_user = users_table.where(id: session["user_id"]).to_a[0]
@@ -66,7 +64,6 @@ get "/events/:id/review/new" do
     view "new_review"
 end
 
-# ADDED TO MAKE REVIEWS WORK##########################################this works without changes to event.erb
 get "/events/:id/reviews/create" do
     puts params
     @event = events_table.where(id: params["id"]).to_a[0]
@@ -74,10 +71,10 @@ get "/events/:id/reviews/create" do
                        user_id: session["user_id"],
                        rate: params["rate"],
                        comment: params["comment"],
+                       current_time: params["current_time"],
                        description: params["description"])
     view "create_review"
 end
-########################################################################
 
 get "/users/new" do
     view "new_user"
