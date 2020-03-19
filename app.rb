@@ -62,6 +62,17 @@ get "/events/:id/review/new" do
     view "new_review"
 end
 
+# ADDED TO MAKE REVIEWS WORK##########################################
+get "/events/:id/reviews/create" do
+    puts params
+    @event = events_table.where(id: params["id"]).to_a[0]
+    reviews_table.insert(event_id: params["id"],
+                       user_id: session["user_id"],
+                       rate: params["rate"],
+                       comments: params["comments"])
+    view "create_review"
+end
+########################################################################
 
 get "/users/new" do
     view "new_user"
