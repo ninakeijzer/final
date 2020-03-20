@@ -9,7 +9,6 @@ DB.create_table! :events do
   primary_key :id
   String :title
   String :description, text: true
-  String :date
   String :location
 end
 DB.create_table! :rsvps do
