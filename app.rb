@@ -51,7 +51,7 @@ end
 
 post "/events/create" do
     puts params
-    events_table.insert(title: params ["title"],
+    events_table.insert(title: params["title"],
                        description: params["description"],
                        location: params["location"])
     view "create_event"
